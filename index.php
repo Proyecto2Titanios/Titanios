@@ -8,6 +8,9 @@ if(isset($login)){
     if(mysqli_num_rows($login)>0){
      // echo "Dentro";
       $_SESSION['username'] = $usu_usuario;
+      $_SESSION['categoria'] = $usu_categoria;
+
+
       if($usu_categoria == 'profesor'){
         header('location:recursos.php');
       } else {
