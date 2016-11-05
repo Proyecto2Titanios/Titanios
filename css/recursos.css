@@ -1,0 +1,43 @@
+/*CODIGO INTRODUCIDO MANUALMENTE*/
+/*CSS imagenes*/
+
+/*Divs Espacios recursos.php*/
+div.espacios {
+  text-align: center;
+  margin: 0 auto;
+  padding-top: 35px;
+  display: flex;
+  background-color: #3ADF6B;
+  min-width: 1000px;
+}
+
+/*POR PROBLEMAS DE RENDIMIENTO DE LA PÁGINA HE CREADO 3 DIVS PARA LOS ESPACIOS Y 3 PARA EL MATERIAL*/
+
+div.espacios2 {
+  text-align: center;
+  margin: 0 auto;
+  padding-top: 20px;
+  display: flex;
+  background-color: #3ADF6B;
+  min-width: 1000px;
+}
+
+div.espacios3 {
+  text-align: center;
+  margin: 0 auto;
+  padding-top: 20px;
+  padding-bottom: 35px;
+  display: flex;
+  background-color: #3ADF6B;
+  min-width: 1000px;
+}
+
+div.espaciosindiv {
+	max-width: 300px;
+	margin: 0 auto;
+	text-align: center;
+}
+
+/*Divs Material recursos.php*/
+
+/*FIN*/
