@@ -27,35 +27,35 @@ include "includes/login.php";
 <body>
   	<div class="espacios">
 
-  			<div class="espaciosindiv"><img src="img/mini/01 (Custom).png"></div>
+  			<div class="espaciosindiv"><img src="img/mini/01.png"></div>
   			
-  			<div class="espaciosindiv"><img src="img/mini/01 (Custom).png"></div>
+  			<div class="espaciosindiv"><img src="img/mini/02.png"></div>
   			
-  			<div class="espaciosindiv"><img src="img/mini/01 (Custom).png"></div>
+  			<div class="espaciosindiv"><img src="img/mini/03.png"></div>
 
-  			<div class="espaciosindiv"><img src="img/mini/01 (Custom).png"></div>
+  			<div class="espaciosindiv"><img src="img/mini/04.png"></div>
 
 	</div>
 	<div class="espacios2">
 
-  			<div class="espaciosindiv"><img src="img/mini/01 (Custom).png"></div>
+  			<div class="espaciosindiv"><img src="img/mini/05.png"></div>
   			
-  			<div class="espaciosindiv"><img src="img/mini/01 (Custom).png"></div>
+  			<div class="espaciosindiv"><img src="img/mini/06.png"></div>
   			
-  			<div class="espaciosindiv"><img src="img/mini/01 (Custom).png"></div>
+  			<div class="espaciosindiv"><img src="img/mini/07.png"></div>
 
-  			<div class="espaciosindiv"><img src="img/mini/01 (Custom).png"></div>
+  			<div class="espaciosindiv"><img src="img/mini/08.png"></div>
 
 	</div>
 	<div class="espacios3">
 
-  			<div class="espaciosindiv"><img src="img/mini/01 (Custom).png"></div>
+  			<div class="espaciosindiv"><img src="img/mini/09.png"></div>
   			
-  			<div class="espaciosindiv"><img src="img/mini/01 (Custom).png"></div>
+  			<div class="espaciosindiv"><img src="img/mini/no.png"></div>
   			
-  			<div class="espaciosindiv"><img src="img/mini/01 (Custom).png"></div>
+  			<div class="espaciosindiv"><img src="img/mini/no.png"></div>
 
-  			<div class="espaciosindiv"><img src="img/mini/01 (Custom).png"></div>
+  			<div class="espaciosindiv"><img src="img/mini/no.png"></div>
 
 	</div>
 </body>
