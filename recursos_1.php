@@ -62,17 +62,26 @@
 <br/>
 
 
-<table border>
 
 	<?php
 
-	// $recurso="BLANCO ES EL COLOR QUE TENGO YO ";
+	$sql = "SELECT rec_nombre, rec_descripcion, rec_finicio, rec_ffin FROM tbl_recursos ORDER BY rec_id";
 
-	for ($fila=1; $fila<=4; $fila++) {
+	$recursos = mysqli_query($conexion, $sql);
+ 
+	echo "<table border = 1 cellspacing = 1 cellpading = 1>
+
+			<tr>
+				<th>Nombre</th>
+				<th>Descripción</th>
+				<th>Fecha Inicio</th>
+				<th>Fecha fin</th>
+			</tr>";
+	$dato_tabla = "tengo cerebro de ameba <br/>y no me sale rellenar la tabla";
+	for ($fila=1; $fila<=5; $fila++) {
 			echo "<tr>";
-			
-		for ($celda=1; $celda<=5; $celda++) {
-			echo "<td>$sql</td>" ;
+		for ($celda=1; $celda<=4; $celda++) {
+			echo "<td>$dato_tabla</td>" ;
 			// $contador++ ;
 		}
 		echo "</tr>" ;
@@ -80,7 +89,7 @@
 
  	?>
 
- </table>
+
 </body>
 </html>
 	<!-- NO OLVIDAR CERRAR LA CONEXION	// mysqli_close($conexion); -->
