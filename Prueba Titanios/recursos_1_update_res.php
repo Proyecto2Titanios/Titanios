@@ -26,5 +26,6 @@
 		 $actualizar = mysqli_query($conexion, $sql_update);
 
 		 header('location: recursos_1.php');
+		 
 
 ?>

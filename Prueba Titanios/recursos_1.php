@@ -15,16 +15,13 @@
 	</style>
 	<script type="text/javascript">
 	function insert_res(id , id_usu){
-<<<<<<< HEAD
+
 		// alert(id + id_usu);
 		open ('recursos_1_insert_res.php?&rec_id='+id+'&usu_id='+id_usu);
-=======
+
 		alert(id + id_usu);
 		open ('recursos_1_insert_res.php?&rec_id='+id+'&usu_id='+id_usu);
 		
-
-
->>>>>>> origin/master
 	}
 
 	function update_res(rec_id , res_id){
@@ -81,7 +78,7 @@
 				$id = $recurso['rec_id'];
 				$id_usu = "1";
 
-<<<<<<< HEAD
+
 				// echo $id;
 				// echo $id_usu;
 				if($recurso['rec_estado'] == "Disponible"){
@@ -92,12 +89,12 @@
 				}
 
 
-=======
+
 				echo $id;
 				echo $id_usu;
 
 				echo '<button type="button" class="log-btn" name="submit" value="Reservar" onclick="insert_res(\''.$id. '\' , \''.$id_usu. '\')">Reservar</button>';
->>>>>>> origin/master
+
 				echo "</div>";
 
 			}
@@ -136,12 +133,11 @@
 				echo "<td>".$recurso['rec_descripcion'] . "</td>";
 				echo "<td>".$recurso['res_finicio'] . "</td>";
 				echo "<td>".$recurso['res_ffin'] . "</td>";
-<<<<<<< HEAD
-=======
+
+
 				echo "<td> <input type='submit' class='log-btn' name='submit' value='Devolver'></input> </td>";
 				// echo "<br/>";
 				echo "</tr>" ;
->>>>>>> origin/master
 
 				$rec_id = $recurso['rec_id'];
 				$res_id = $recurso['res_id'];
@@ -161,12 +157,12 @@
 			}
 		
 			}
-<<<<<<< HEAD
+
 	 	}
-=======
+
 		// echo "</tr>" ;
  	}
->>>>>>> origin/master
+
 
  	?>
 

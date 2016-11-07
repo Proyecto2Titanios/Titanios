@@ -15,7 +15,7 @@
 
 		extract($_REQUEST);
 
-<<<<<<< HEAD
+
 		$sql_insert = "INSERT INTO tbl_reservas (usu_id, rec_id, res_finicio) VALUES ($usu_id, $rec_id, current_timestamp)";
 
 		$sql_update = "UPDATE tbl_recursos SET rec_estado = 'Ocupado' WHERE tbl_recursos.rec_id = $rec_id";
@@ -24,13 +24,13 @@
 		 $actualizar = mysqli_query($conexion, $sql_update);
 
 		 header('location: recursos_1.php');
-=======
+
 		$sql_insert = "INSERT INTO tbl_reservas (usu_id, rec_id) VALUES ($usu_id, $rec_id)";
 		$sql_update = "UPDATE tbl_recursos SET rec_estado = 'Ocupado' WHERE tbl_recursos.rec_id = $rec_id";
 
 
 		echo $sql_insert;
 		echo $sql_update;
->>>>>>> origin/master
+
 
 ?>
