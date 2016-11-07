@@ -17,16 +17,13 @@
 	function insert_res(id , id_usu){
 
 		// alert(id + id_usu);
-		open ('recursos_1_insert_res.php?&rec_id='+id+'&usu_id='+id_usu);
-
-		alert(id + id_usu);
-		open ('recursos_1_insert_res.php?&rec_id='+id+'&usu_id='+id_usu);
+		window.location = 'recursos_1_insert_res.php?&rec_id='+id+'&usu_id='+id_usu;
 		
 	}
 
 	function update_res(rec_id , res_id){
-		alert(rec_id + "__" + res_id);
-		open ('recursos_1_update_res.php?&rec_id='+rec_id+'&res_id='+res_id);
+		// alert(rec_id + "__" + res_id);
+		window.location = 'recursos_1_update_res.php?&rec_id='+rec_id+'&res_id='+res_id;
 	}
 	</script>
 
@@ -74,7 +71,7 @@
 				echo '<div class="espaciosindiv">';
 				echo $recurso['rec_nombre'] . "<br/>";
 				echo $recurso['rec_descripcion'] . "<br/>";
-				// echo '<button type="button" class="log-btn" name="submit" value="Reservar" onclick="insert_res($recurso['rec_id'])"></button>';
+				
 				$id = $recurso['rec_id'];
 				$id_usu = "1";
 
@@ -87,13 +84,6 @@
 					echo '<button type="button" class="log-btn" name="submit"  onclick="insert_res(\''.$id. '\' , \''.$id_usu. '\')" disabled="true">Reservar</button>';
 
 				}
-
-
-
-				echo $id;
-				echo $id_usu;
-
-				echo '<button type="button" class="log-btn" name="submit" value="Reservar" onclick="insert_res(\''.$id. '\' , \''.$id_usu. '\')">Reservar</button>';
 
 				echo "</div>";
 
@@ -109,7 +99,7 @@
 
 	<?php
 
-	$sql = "SELECT tbl_recursos.rec_nombre, tbl_recursos.rec_descripcion, tbl_reservas.res_finicio, tbl_reservas.res_ffin, tbl_recursos.rec_id, tbl_reservas.res_id FROM tbl_reservas, tbl_recursos WHERE tbl_recursos.rec_id = tbl_reservas.rec_id";
+	$sql = "SELECT tbl_recursos.rec_nombre, tbl_recursos.rec_descripcion, tbl_reservas.res_finicio, tbl_reservas.res_ffin, tbl_recursos.rec_id, tbl_reservas.res_id FROM tbl_reservas, tbl_recursos WHERE tbl_recursos.rec_id = tbl_reservas.rec_id ORDER BY tbl_reservas.res_ffin asc";
 
 	$recursos = mysqli_query($conexion, $sql);
 
@@ -135,10 +125,7 @@
 				echo "<td>".$recurso['res_ffin'] . "</td>";
 
 
-				echo "<td> <input type='submit' class='log-btn' name='submit' value='Devolver'></input> </td>";
-				// echo "<br/>";
-				echo "</tr>" ;
-
+				
 				$rec_id = $recurso['rec_id'];
 				$res_id = $recurso['res_id'];
 				//Hemos ido comprobando que recogemos las variables correctamente
@@ -161,8 +148,7 @@
 	 	}
 
 		// echo "</tr>" ;
- 	}
-
+ 	
 
  	?>
 
