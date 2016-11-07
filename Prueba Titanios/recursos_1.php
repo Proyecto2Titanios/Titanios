@@ -14,8 +14,11 @@
 		}
 	</style>
 	<script type="text/javascript">
-	function insert_res(id){
-		alert(id);
+	function insert_res(id , id_usu){
+		alert(id + id_usu);
+		open ('recursos_1_insert_res.php?&rec_id='+id+'&usu_id='+id_usu);
+		
+
 
 	}
 
@@ -67,9 +70,12 @@
 				echo $recurso['rec_descripcion'] . "<br/>";
 				// echo '<button type="button" class="log-btn" name="submit" value="Reservar" onclick="insert_res($recurso['rec_id'])"></button>';
 				$id = $recurso['rec_id'];
-				echo $id;
+				$id_usu = "1";
 
-				echo '<button type="button" class="log-btn" name="submit" value="Reservar" onclick="insert_res(\''.$id.'\')">Reservar</button>';
+				echo $id;
+				echo $id_usu;
+
+				echo '<button type="button" class="log-btn" name="submit" value="Reservar" onclick="insert_res(\''.$id. '\' , \''.$id_usu. '\')">Reservar</button>';
 				echo "</div>";
 			}
 		} else {
@@ -108,14 +114,13 @@
 				echo "<td>".$recurso['res_finicio'] . "</td>";
 				echo "<td>".$recurso['res_ffin'] . "</td>";
 				echo "<td> <input type='submit' class='log-btn' name='submit' value='Devolver'></input> </td>";
-
+				// echo "<br/>";
+				echo "</tr>" ;
 
 			}
 		
-
-
 			}
-		echo "</tr>" ;
+		// echo "</tr>" ;
  	}
 
  	?>
