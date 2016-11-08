@@ -27,7 +27,7 @@ include "includes/login.php";
 <body>
   	<div class="espacios">
 
-  			<div class="espaciosindiv"><img class="hover" src="img/mini/01.png"></div>
+  			<div class="espaciosindiv"><img src="img/mini/01.png"></div>
   			
   			<div class="espaciosindiv"><img src="img/mini/02.png"></div>
   			
