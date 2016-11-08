@@ -19,7 +19,7 @@ div.espacios2 {
   padding-top: 20px;
   display: flex;
   background-color: #3ADF6B;
-  min-width: 1000px;
+  min-width: 800px;
 }
 
 div.espacios3 {
@@ -29,7 +29,7 @@ div.espacios3 {
   padding-bottom: 35px;
   display: flex;
   background-color: #3ADF6B;
-  min-width: 1000px;
+  min-width: 800px;
 }
 
 div.espaciosindiv {
@@ -46,7 +46,7 @@ div.material {
   padding-top: 35px;
   display: flex;
   background-color: #5ABDFF;
-  min-width: 1000px;
+  min-width: 800px;
 }
 
 /*POR PROBLEMAS DE RENDIMIENTO DE LA PÁGINA HE CREADO 1 DIV PARA CADA FILA DE OBJETOS*/
@@ -57,7 +57,7 @@ div.material2 {
   padding-top: 20px;
   display: flex;
   background-color: #5ABDFF;
-  min-width: 1000px;
+  min-width: 800px;
 }
 
 div.material3 {
@@ -67,7 +67,7 @@ div.material3 {
   padding-bottom: 35px;
   display: flex;
   background-color: #5ABDFF;
-  min-width: 1000px;
+  min-width: 800px;
 }
 
 div.materialindiv {
