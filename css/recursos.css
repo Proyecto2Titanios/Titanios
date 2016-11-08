@@ -8,7 +8,7 @@ div.espacios {
   padding-top: 35px;
   display: flex;
   background-color: #3ADF6B;
-  min-width: 1000px;
+  min-width: 800px;
 }
 
 /*POR PROBLEMAS DE RENDIMIENTO DE LA PÁGINA HE CREADO 1 DIV PARA CADA FILA DE OBJETOS*/
@@ -39,5 +39,41 @@ div.espaciosindiv {
 }
 
 /*Divs Material recursos.php*/
+
+div.material {
+  text-align: center;
+  margin: 0 auto;
+  padding-top: 35px;
+  display: flex;
+  background-color: #5ABDFF;
+  min-width: 1000px;
+}
+
+/*POR PROBLEMAS DE RENDIMIENTO DE LA PÁGINA HE CREADO 1 DIV PARA CADA FILA DE OBJETOS*/
+
+div.material2 {
+  text-align: center;
+  margin: 0 auto;
+  padding-top: 20px;
+  display: flex;
+  background-color: #5ABDFF;
+  min-width: 1000px;
+}
+
+div.material3 {
+  text-align: center;
+  margin: 0 auto;
+  padding-top: 20px;
+  padding-bottom: 35px;
+  display: flex;
+  background-color: #5ABDFF;
+  min-width: 1000px;
+}
+
+div.materialindiv {
+  max-width: 300px;
+  margin: 0 auto;
+  text-align: center;
+}
 
 /*FIN*/

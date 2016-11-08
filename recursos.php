@@ -58,5 +58,38 @@ include "includes/login.php";
   			<div class="espaciosindiv"><img src="img/mini/no.png"></div>
 
 	</div>
+  <div class="material">
+
+        <div class="materialindiv"><img src="img/mini/10.png"></div>
+        
+        <div class="materialindiv"><img src="img/mini/11.png"></div>
+        
+        <div class="materialindiv"><img src="img/mini/12.png"></div>
+
+        <div class="materialindiv"><img src="img/mini/13.png"></div>
+
+  </div>
+  <div class="material2">
+
+        <div class="materialindiv"><img src="img/mini/14.png"></div>
+        
+        <div class="materialindiv"><img src="img/mini/15.png"></div>
+        
+        <div class="materialindiv"><img src="img/mini/16.png"></div>
+
+        <div class="materialindiv"><img src="img/mini/no.png"></div>
+
+  </div>
+  <div class="material3">
+
+        <div class="materialindiv"><img src="img/mini/no.png"></div>
+        
+        <div class="materialindiv"><img src="img/mini/no.png"></div>
+        
+        <div class="materialindiv"><img src="img/mini/no.png"></div>
+
+        <div class="materialindiv"><img src="img/mini/no.png"></div>
+
+  </div>
 </body>
 </html>
