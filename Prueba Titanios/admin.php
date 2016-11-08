@@ -18,48 +18,11 @@ include "includes/login.php";
 
       <link rel="stylesheet" href="css/style.css">
 
-  <style>
-		div.espaciosindiv {
-			width: 20%;
-			height: 125px;
-			border: 2px solid black;
-			float: left;
-			margin-left: 3.5%;
-			margin-bottom: 20px;
-		}
-	div .titulo{
-		width: 100%;
-		height: 25px;
-		}
-
-		
-	div .descripcion{
-		width: 100%;
-		height: 60px;
-		}
-	}
-	div .boton{
-		width: 100%;
-		height: 30px;
-		}
-	
-			
-
-		div.estadistica {
-			width: 80%;
-			margin-left: 10%;
-			border: 2px solid black;
-			float: left;
-			margin-right: 20px;
-			margin-bottom: 20px;
-		}
-}
-	</style>
-	<script type="text/javascript">
+  	<script type="text/javascript">
 	function insert_esta(id, nombre, descripcion, estado){
 
 		// alert(id + id_usu);
-		window.location = 'admin_1.php?&rec_id='+id+'&rec_nombre='+nombre+'&rec_descripcion='+descripcion+'&rec_estado='+estado;
+		window.location = 'admin.php?&rec_id='+id+'&rec_nombre='+nombre+'&rec_descripcion='+descripcion+'&rec_estado='+estado;
 		
 	}
 
