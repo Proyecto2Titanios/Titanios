@@ -15,17 +15,22 @@
 
 		extract($_REQUEST);
 
-		// $sql_insert = "INSERT INTO tbl_reservas (usu_id, rec_id) VALUES ($usu_id, $rec_id)";
 
-		$sql_update = "UPDATE tbl_reservas SET res_ffin = current_timestamp WHERE res_id = $res_id";
+		$sql_insert = "INSERT INTO tbl_reservas (usu_id, rec_id, res_finicio) VALUES ($usu_id, $rec_id, current_timestamp)";
 
-		$sql_update_reserva = "UPDATE tbl_recursos SET rec_estado = 'Disponible' WHERE rec_id = $rec_id";
-		
+		$sql_update = "UPDATE tbl_recursos SET rec_estado = 'Ocupado' WHERE tbl_recursos.rec_id = $rec_id";
 
-		 $actualizar_reserva = mysqli_query($conexion, $sql_update_reserva);
+		 $reservar = mysqli_query($conexion, $sql_insert);
 		 $actualizar = mysqli_query($conexion, $sql_update);
 
-		 header('location: recursos.php');
-		 
+		 header('location: admin_1.php');
+
+		$sql_insert = "INSERT INTO tbl_reservas (usu_id, rec_id) VALUES ($usu_id, $rec_id)";
+		$sql_update = "UPDATE tbl_recursos SET rec_estado = 'Ocupado' WHERE tbl_recursos.rec_id = $rec_id";
+
+
+		echo $sql_insert;
+		echo $sql_update;
+
 
 ?>

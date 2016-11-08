@@ -4,18 +4,21 @@ session_start();
 if(!isset($_SESSION['username']) || $_SESSION['categoria'] == 'administrador'){
     header('location:index.php');
 
-
 }
 include "includes/login.php";
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html >
 <head>
-	<meta charset="UTF-8">
-	<title>Recursos</title>
-	<!-- Dejo el style de David pero la idea es meterlo luego en el div de la imagen de fondo -->
-	<style>
+  <meta charset="UTF-8">
+  <title>Titanium Recursos</title>
+  
+  
+  <link rel='stylesheet prefetch' href='http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css'>
+
+      <link rel="stylesheet" href="css/style.css">
+    <style>
 		div {
 			width: 200px;
 			border: 2px solid black;
@@ -27,7 +30,7 @@ include "includes/login.php";
 	<script type="text/javascript">
 	function insert_res(id , id_usu){
 
-		// alert(id + id_usu);
+		//alert(id + id_usu);
 		window.location = 'recursos_1_insert_res.php?&rec_id='+id+'&usu_id='+id_usu;
 		
 	}
@@ -37,15 +40,13 @@ include "includes/login.php";
 		window.location = 'recursos_1_update_res.php?&rec_id='+rec_id+'&res_id='+res_id;
 	}
 	</script>
-
-
-
-
+  
 
 </head>
-<body>
 
-	<!-- OJO este link hay que cambiarlo porque lo tengo en otra carpeta y hago retroceder -->
+<body>
+  
+   <!-- OJO este link hay que cambiarlo porque lo tengo en otra carpeta y hago retroceder -->
 	<!-- <a href="../Titanios/index.php">Volver al Login</a><br/><br/> -->
 	<?php
 
@@ -84,15 +85,13 @@ include "includes/login.php";
 				echo $recurso['rec_descripcion'] . "<br/>";
 				
 				$id = $recurso['rec_id'];
-				$id_usu = "1";
-
-
+				$id_usu = $_SESSION['id_usuario'];
 				// echo $id;
 				// echo $id_usu;
 				if($recurso['rec_estado'] == "Disponible"){
-				echo '<button type="button" class="log-btn" name="submit"  onclick="insert_res(\''.$id. '\' , \''.$id_usu. '\')">Reservar</button>';
+				echo '<button type="button"  name="submit"  onclick="insert_res(\''.$id. '\' , \''.$id_usu. '\')">Reservar</button>';
 				}else {
-					echo '<button type="button" class="log-btn" name="submit"  onclick="insert_res(\''.$id. '\' , \''.$id_usu. '\')" disabled="true">Reservar</button>';
+					echo '<button type="button"  name="submit"  onclick="insert_res(\''.$id. '\' , \''.$id_usu. '\')" disabled="true">Reservar</button>';
 
 				}
 
@@ -110,7 +109,10 @@ include "includes/login.php";
 
 	<?php
 
-	$sql = "SELECT tbl_recursos.rec_nombre, tbl_recursos.rec_descripcion, tbl_reservas.res_finicio, tbl_reservas.res_ffin, tbl_recursos.rec_id, tbl_reservas.res_id FROM tbl_reservas, tbl_recursos WHERE tbl_recursos.rec_id = tbl_reservas.rec_id ORDER BY tbl_reservas.res_ffin asc";
+	$usu_id_consulta = $_SESSION['id_usuario'];
+
+
+	$sql = "SELECT tbl_recursos.rec_nombre, tbl_recursos.rec_descripcion, tbl_reservas.res_finicio, tbl_reservas.res_ffin, tbl_recursos.rec_id, tbl_reservas.res_id FROM tbl_reservas, tbl_recursos WHERE tbl_recursos.rec_id = tbl_reservas.rec_id AND tbl_reservas.usu_id = $usu_id_consulta ORDER BY tbl_reservas.res_ffin asc";
 
 	$recursos = mysqli_query($conexion, $sql);
 
@@ -162,10 +164,6 @@ include "includes/login.php";
  	
 
  	?>
- <?php
-    echo $_SESSION['categoria'];
-    ?>
 
 </body>
 </html>
-	<!-- NO OLVIDAR CERRAR LA CONEXION	// mysqli_close($conexion); -->

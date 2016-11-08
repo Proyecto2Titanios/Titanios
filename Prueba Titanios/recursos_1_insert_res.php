@@ -1,4 +1,9 @@
 <?php
+session_start();
+if(!isset($_SESSION['username']) || $_SESSION['categoria'] == 'administrador'){
+    header('location:index.php');
+
+}
 
 		//realizamos la conexión
 		$conexion = mysqli_connect('localhost', 'root', '', 'bd_titanio');
@@ -23,14 +28,11 @@
 		 $reservar = mysqli_query($conexion, $sql_insert);
 		 $actualizar = mysqli_query($conexion, $sql_update);
 
-		 header('location: recursos_1.php');
+		
 
 		$sql_insert = "INSERT INTO tbl_reservas (usu_id, rec_id) VALUES ($usu_id, $rec_id)";
 		$sql_update = "UPDATE tbl_recursos SET rec_estado = 'Ocupado' WHERE tbl_recursos.rec_id = $rec_id";
 
-
-		echo $sql_insert;
-		echo $sql_update;
-
+		header('location: recursos.php');
 
 ?>

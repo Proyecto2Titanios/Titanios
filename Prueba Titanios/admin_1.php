@@ -1,14 +1,3 @@
-<?php
-
-session_start();
-if(!isset($_SESSION['username']) || $_SESSION['categoria'] == 'administrador'){
-    header('location:index.php');
-
-
-}
-include "includes/login.php";
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,8 +5,17 @@ include "includes/login.php";
 	<title>Recursos</title>
 	<!-- Dejo el style de David pero la idea es meterlo luego en el div de la imagen de fondo -->
 	<style>
-		div {
-			width: 200px;
+		div.espaciosindiv {
+			width: 20%;
+			height: 100px;
+			border: 2px solid black;
+			float: left;
+			margin-left: 3.5%;
+			margin-bottom: 20px;
+		}
+		div.estadistica {
+			width: 80%;
+			margin-left: 10%;
 			border: 2px solid black;
 			float: left;
 			margin-right: 20px;
@@ -25,17 +23,14 @@ include "includes/login.php";
 		}
 	</style>
 	<script type="text/javascript">
-	function insert_res(id , id_usu){
+	function insert_esta(id, nombre, descripcion, estado){
 
 		// alert(id + id_usu);
-		window.location = 'recursos_1_insert_res.php?&rec_id='+id+'&usu_id='+id_usu;
+		window.location = 'admin_1.php?&rec_id='+id+'&rec_nombre='+nombre+'&rec_descripcion='+descripcion+'&rec_estado='+estado;
 		
 	}
 
-	function update_res(rec_id , res_id){
-		// alert(rec_id + "__" + res_id);
-		window.location = 'recursos_1_update_res.php?&rec_id='+rec_id+'&res_id='+res_id;
-	}
+	
 	</script>
 
 
@@ -44,7 +39,9 @@ include "includes/login.php";
 
 </head>
 <body>
-
+ <div class="estadistica">
+ 	
+ 
 	<!-- OJO este link hay que cambiarlo porque lo tengo en otra carpeta y hago retroceder -->
 	<!-- <a href="../Titanios/index.php">Volver al Login</a><br/><br/> -->
 	<?php
@@ -83,18 +80,13 @@ include "includes/login.php";
 				echo $recurso['rec_nombre'] . "<br/>";
 				echo $recurso['rec_descripcion'] . "<br/>";
 				
-				$id = $recurso['rec_id'];
-				$id_usu = "1";
-
-
-				// echo $id;
-				// echo $id_usu;
-				if($recurso['rec_estado'] == "Disponible"){
-				echo '<button type="button" class="log-btn" name="submit"  onclick="insert_res(\''.$id. '\' , \''.$id_usu. '\')">Reservar</button>';
-				}else {
-					echo '<button type="button" class="log-btn" name="submit"  onclick="insert_res(\''.$id. '\' , \''.$id_usu. '\')" disabled="true">Reservar</button>';
-
-				}
+				$rec_id = $recurso['rec_id'];
+				$rec_nombre = $recurso['rec_nombre'];
+				$rec_descripcion = $recurso['rec_descripcion'];
+				$rec_estado = $recurso['rec_estado'];
+	
+				echo '<button type="button" class="log-btn" name="submit"  onclick="insert_esta(\''.$rec_id. '\',\''.$rec_nombre. '\', \''.$rec_descripcion. '\',\''.$rec_estado. '\' )">Estadística</button>';
+				
 
 				echo "</div>";
 
@@ -105,24 +97,32 @@ include "includes/login.php";
 
 	?>
 <br/>
+</div>
 
 
-
+ <div class="estadistica">
 	<?php
 
-	$sql = "SELECT tbl_recursos.rec_nombre, tbl_recursos.rec_descripcion, tbl_reservas.res_finicio, tbl_reservas.res_ffin, tbl_recursos.rec_id, tbl_reservas.res_id FROM tbl_reservas, tbl_recursos WHERE tbl_recursos.rec_id = tbl_reservas.rec_id ORDER BY tbl_reservas.res_ffin asc";
+	if (isset($_REQUEST['rec_id'])){
+
+	extract($_REQUEST);
+
+	$sql = "SELECT DISTINCT tbl_usuarios.usu_usuario, tbl_reservas.res_finicio, tbl_reservas.res_ffin FROM tbl_reservas, tbl_usuarios where tbl_reservas.rec_id =$rec_id AND tbl_reservas.usu_id = tbl_usuarios.usu_id GROUP BY tbl_reservas.res_id";
 
 	$recursos = mysqli_query($conexion, $sql);
+
+
+	echo "<h4>".$rec_nombre." - ".$rec_descripcion. "</h4>";
+	echo "<h4>".mysqli_num_rows($recursos)." registros encontrados - Estado actual: ".$rec_estado. "</h4>";
+
 
 	
 	echo "<table border = 1 cellspacing = 1 cellpading = 1>
 
 			<tr>
-				<th>Nombre</th>
-				<th>Descripción</th>
-				<th>Fecha Inicio</th>
+				<th>Usuario</th>
+				<th>Fecha inicio</th>
 				<th>Fecha fin</th>
-				<th>Botón devolución</th>
 			</tr>";
 	
 	for ($fila=1; $fila<=5; $fila++) {
@@ -130,41 +130,23 @@ include "includes/login.php";
 		for ($celda=1; $celda<=5; $celda++) {
 			while ($recurso = mysqli_fetch_array($recursos)) {
 
-				echo "<td>".$recurso['rec_nombre'] . "</td>";
-				echo "<td>".$recurso['rec_descripcion'] . "</td>";
+				echo "<td>".$recurso['usu_usuario'] . "</td>";
 				echo "<td>".$recurso['res_finicio'] . "</td>";
 				echo "<td>".$recurso['res_ffin'] . "</td>";
-
-
-				
-				$rec_id = $recurso['rec_id'];
-				$res_id = $recurso['res_id'];
-				//Hemos ido comprobando que recogemos las variables correctamente
-				// echo $res_id;
-				// echo $rec_id;
- 				
- 				if (empty($recurso['res_ffin'])){
-				echo "<td> <button type='button' class='log-btn' name='submit'  onclick='update_res(\"".$rec_id. "\" , \"".$res_id. "\")' >Devolución</button></td>";
 				echo "</tr>" ;
-				}else {
-					echo "<td> <button type='button' class='log-btn' name='submit'  onclick='update_res(\"".$rec_id. "\" , \"".$res_id. "\")' disabled='true'>Devolución</button></td>";
-				echo "</tr>" ;
-
-
-				}
 			}
 		
-			}
+		}
 
-	 	}
+		
+	}
 
-		// echo "</tr>" ;
- 	
+	echo "</tabla>";
+ 	}
 
  	?>
- <?php
-    echo $_SESSION['categoria'];
-    ?>
+ </div>
+
 
 </body>
 </html>
