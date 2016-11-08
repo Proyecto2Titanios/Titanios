@@ -1,79 +1,31 @@
 /*CODIGO INTRODUCIDO MANUALMENTE*/
-/*CSS imagenes*/
 
-/*Divs Espacios recursos.php*/
-div.espacios {
-  text-align: center;
-  margin: 0 auto;
-  padding-top: 35px;
-  display: flex;
-  background-color: #3ADF6B;
-  min-width: 800px;
+body {
+  background: url(../img/bg.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
-/*POR PROBLEMAS DE RENDIMIENTO DE LA PÁGINA HE CREADO 1 DIV PARA CADA FILA DE OBJETOS*/
-
-div.espacios2 {
-  text-align: center;
-  margin: 0 auto;
-  padding-top: 20px;
-  display: flex;
-  background-color: #3ADF6B;
-  min-width: 800px;
-}
-
-div.espacios3 {
-  text-align: center;
-  margin: 0 auto;
-  padding-top: 20px;
-  padding-bottom: 35px;
-  display: flex;
-  background-color: #3ADF6B;
-  min-width: 800px;
+div.estadistica {
+  width: 80%;
+  margin-left: 10%;
+  border: 2px solid black;
+  float: left;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  margin-top: 20px;
 }
 
 div.espaciosindiv {
-	max-width: 300px;
-	margin: 0 auto;
-	text-align: center;
-}
-
-/*Divs Material recursos.php*/
-
-div.material {
-  text-align: center;
-  margin: 0 auto;
-  padding-top: 35px;
-  display: flex;
-  background-color: #5ABDFF;
-  min-width: 800px;
-}
-
-/*POR PROBLEMAS DE RENDIMIENTO DE LA PÁGINA HE CREADO 1 DIV PARA CADA FILA DE OBJETOS*/
-
-div.material2 {
-  text-align: center;
-  margin: 0 auto;
-  padding-top: 20px;
-  display: flex;
-  background-color: #5ABDFF;
-  min-width: 800px;
-}
-
-div.material3 {
-  text-align: center;
-  margin: 0 auto;
-  padding-top: 20px;
-  padding-bottom: 35px;
-  display: flex;
-  background-color: #5ABDFF;
-  min-width: 800px;
-}
-
-div.materialindiv {
-  max-width: 300px;
-  margin: 0 auto;
-  text-align: center;
+  width: 200px;
+  height: 200px;
+  border: 2px solid black;
+  float: left;
+  margin-left: 4.25%;
+  margin-bottom: 35px;
+  margin-top: 35px;
 }
 
 /*FIN*/
