@@ -1,6 +1,16 @@
 /*CODIGO INTRODUCIDO MANUALMENTE*/
 /*CSS imagenes*/
 
+img.hover {
+  opacity:1.0;
+  filter:alpha(opacity=100); /* For IE8 and earlier */
+}
+
+img.hover:hover {
+  opacity:0.80;
+  filter:alpha(opacity=80); /* For IE8 and earlier */
+}
+
 /*Divs Espacios recursos.php*/
 div.espacios {
   text-align: center;
@@ -11,7 +21,7 @@ div.espacios {
   min-width: 1000px;
 }
 
-/*POR PROBLEMAS DE RENDIMIENTO DE LA PÁGINA HE CREADO 3 DIVS PARA LOS ESPACIOS Y 3 PARA EL MATERIAL*/
+/*POR PROBLEMAS DE RENDIMIENTO DE LA PÁGINA HE CREADO 1 DIV PARA CADA FILA DE OBJETOS*/
 
 div.espacios2 {
   text-align: center;
