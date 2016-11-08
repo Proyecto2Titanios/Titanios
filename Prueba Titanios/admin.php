@@ -106,13 +106,15 @@ include "includes/login.php";
 
 	$recursos = mysqli_query($conexion, $sql);
 
-
-	echo "<h4>".$rec_nombre." - ".$rec_descripcion. "</h4>";
-	echo "<h4>".mysqli_num_rows($recursos)." registros encontrados - Estado actual: ".$rec_estado. "</h4>";
-
+	echo "<table style='margin-bottom: 5px; margin-top: 5px'>";
+	echo "<th>".$rec_nombre." - ".$rec_descripcion. "</th>";
+	echo "</table>";
+	echo "<table style='margin-bottom: 5px'>";
+	echo "<th>".mysqli_num_rows($recursos)." registros encontrados - Estado actual: ".$rec_estado. "</th>";
+	echo "</table>";
 
 	
-	echo "<table border = 1 cellspacing = 1 cellpading = 1>
+	echo "<table>
 
 			<tr>
 				<th>Usuario</th>

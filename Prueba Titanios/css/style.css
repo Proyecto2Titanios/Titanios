@@ -12,6 +12,7 @@ body {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+
 }
 
 h1 {
@@ -93,24 +94,61 @@ div.espaciosindiv {
       float: left;
       margin-left: 3.5%;
       margin-bottom: 20px;
+      font-color: white;
     }
+
+table {
+font-family: "lucida sans unicode", "lucida grande", sans-serif;
+font-size: 15px;
+margin-left: 4%;
+margin-bottom: 20px;
+width: 90%;
+text-align: left;
+border-collapse: collapse;
+}
+
+th {
+  font-size: 16px;
+  font-weight: normal;
+  padding: 8px;
+  background: #0ac986;
+  border-top: 4px solid #0ac986;
+  border-bottom: 1px solid #fff;
+  color: #fff;
+}
+
+td {    
+  padding: 8px;     
+  background: #e8edff;     
+  border-bottom: 1px solid #fff;
+  color: #669;    
+  border-top: 1px solid transparent; }
+
+tr:hover td { 
+  background: #d0dafd; 
+  color: #339; 
+}
+
 
   div .titulo{
     width: 100%;
     height: 25px;
     text-align: center;
+    color: white;
     }
 
     
   div .descripcion{
     width: 100%;
     height: 60px;
+    font-weight: bold;
     }
   
 
   div .boton{
     width: 100%;
     height: 30px;
+
     }
   
       
@@ -128,13 +166,6 @@ div.espaciosindiv {
 
 
 
-
-.mybutton {
-width: 100%;
-  font-size: 16px;
-  height: 300px;
-  color: #fff;
-}
 
 .log-btn {
   background: #0ac986;

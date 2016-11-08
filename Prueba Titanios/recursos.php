@@ -18,15 +18,7 @@ include "includes/login.php";
   <link rel='stylesheet prefetch' href='http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css'>
 
       <link rel="stylesheet" href="css/style.css">
-    <style>
-		div {
-			width: 200px;
-			border: 2px solid black;
-			float: left;
-			margin-right: 20px;
-			margin-bottom: 20px;
-		}
-	</style>
+   
 	<script type="text/javascript">
 	function insert_res(id , id_usu){
 
@@ -45,6 +37,8 @@ include "includes/login.php";
 </head>
 
 <body>
+  <div class="estadistica">
+  	
   
    <!-- OJO este link hay que cambiarlo porque lo tengo en otra carpeta y hago retroceder -->
 	<!-- <a href="../Titanios/index.php">Volver al Login</a><br/><br/> -->
@@ -65,7 +59,7 @@ include "includes/login.php";
 
 		extract($_REQUEST);
 
-		$sql = "SELECT rec_nombre, rec_descripcion, rec_id, rec_estado FROM tbl_recursos ORDER BY rec_id";
+		$sql = "SELECT rec_nombre, rec_descripcion, rec_id, rec_estado, rec_foto FROM tbl_recursos ORDER BY rec_id";
 
 		$recursos = mysqli_query($conexion, $sql);
 
@@ -80,20 +74,30 @@ include "includes/login.php";
 			echo "Tenemos " .mysqli_num_rows($recursos) . " recursos en la base de datos<br/><br/>";
 
 			while ($recurso = mysqli_fetch_array($recursos)) {
-				echo '<div class="espaciosindiv">';
-				echo $recurso['rec_nombre'] . "<br/>";
-				echo $recurso['rec_descripcion'] . "<br/>";
+				$imagen = $recurso['rec_foto'];
+
+				// echo $imagen;
+				// echo "<img src='img/".$imagen.".png'>";
+				?>
+				<div class="espaciosindiv" style="background: url('img/<?php echo $imagen; ?>');">
+				<?php
+				echo "<div class='titulo'>";
+				echo $recurso['rec_nombre'] . "</div>";
+				echo "<div class='descripcion'>";
+				echo $recurso['rec_descripcion'] . "</div>";
 				
 				$id = $recurso['rec_id'];
 				$id_usu = $_SESSION['id_usuario'];
 				// echo $id;
 				// echo $id_usu;
+				echo "<div class='boton'>";
 				if($recurso['rec_estado'] == "Disponible"){
-				echo '<button type="button"  name="submit"  onclick="insert_res(\''.$id. '\' , \''.$id_usu. '\')">Reservar</button>';
+				echo '<button type="button"  class="log-btn" name="submit"  onclick="insert_res(\''.$id. '\' , \''.$id_usu. '\')">Reservar</button>';
 				}else {
-					echo '<button type="button"  name="submit"  onclick="insert_res(\''.$id. '\' , \''.$id_usu. '\')" disabled="true">Reservar</button>';
+					// echo '<button type="button" class="log-btn" name="submit"  onclick="insert_res(\''.$id. '\' , \''.$id_usu. '\')" disabled="true">Reservar</button>';
 
 				}
+				echo "</div>";
 
 				echo "</div>";
 
@@ -105,7 +109,9 @@ include "includes/login.php";
 	?>
 <br/>
 
+</div>
 
+<div class="estadistica">
 
 	<?php
 
@@ -117,7 +123,7 @@ include "includes/login.php";
 	$recursos = mysqli_query($conexion, $sql);
 
 	
-	echo "<table border = 1 cellspacing = 1 cellpading = 1>
+	echo "<table style='margin-top:20px;'>
 
 			<tr>
 				<th>Nombre</th>
@@ -164,6 +170,6 @@ include "includes/login.php";
  	
 
  	?>
-
+</div>
 </body>
 </html>
