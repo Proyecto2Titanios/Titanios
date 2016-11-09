@@ -1,21 +1,22 @@
 <?php
+include "includes/conexion_bd.php";
 session_start();
 if(!isset($_SESSION['username']) || $_SESSION['categoria'] == 'administrador'){
     header('location:index.php');
 
 }
 
-		//realizamos la conexión
-		$conexion = mysqli_connect('localhost', 'root', '', 'bd_titanio');
-	// Cojo la idea de David para lo acentos para que no 	tengamos problemas con la descripción
-		$acentos = mysqli_query($conexion, "SET NAMES 'utf8'");
+	// 	//realizamos la conexión
+	// 	$conexion = mysqli_connect('localhost', 'root', '', 'bd_titanio');
+	// // Cojo la idea de David para lo acentos para que no 	tengamos problemas con la descripción
+	// 	$acentos = mysqli_query($conexion, "SET NAMES 'utf8'");
 
-		if (!$conexion) {
-		    echo "Error: No se pudo conectar a MySQL." . PHP_EOL;
-		    echo "errno de depuración: " . mysqli_connect_errno() . PHP_EOL;
-		    echo "error de depuración: " . mysqli_connect_error() . PHP_EOL;
-		    exit;
-		}
+	// 	if (!$conexion) {
+	// 	    echo "Error: No se pudo conectar a MySQL." . PHP_EOL;
+	// 	    echo "errno de depuración: " . mysqli_connect_errno() . PHP_EOL;
+	// 	    echo "error de depuración: " . mysqli_connect_error() . PHP_EOL;
+	// 	    exit;
+	// 	}
 
 
 		extract($_REQUEST);
