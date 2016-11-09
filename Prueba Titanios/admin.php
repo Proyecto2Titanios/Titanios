@@ -33,6 +33,14 @@ include "includes/login.php";
 </head>
 
 <body>
+	<div class="encabezado">
+            <div class="text-center col-md-8 col-sm-8 col-xs-8" style="vertical-align:top;">
+                <h1> <font face="Helvetica" COLOR="#0079BA">Panel de control</font></h1>
+            </div>
+            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 ">
+                <h3 ALIGN="right"><font face="Helvetica" COLOR="#0079BA"><span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span></font></h3>
+            </div>
+    </div>
   
     <div class="estadistica">
  	

@@ -5,6 +5,13 @@
   -webkit-box-sizing: border-box;
   font-family: arial;
 }
+html,body{
+
+margin:0px;
+
+height:100%;
+
+}
 
 body {
   background: url(../img/bg.jpg) no-repeat center center fixed; 
@@ -20,6 +27,16 @@ h1 {
   text-align: center;
   font-family: 'Itim', cursive;
   font-size: 50px;
+}
+
+div.encabezado{
+  width: 100%;
+  overflow: hidden;
+   border-bottom: 5px solid #0ac986;
+   box-sizing: border-box;
+   margin-bottom: 20px;
+  
+  background-color: white;
 }
 
 .checkbox-admin {
