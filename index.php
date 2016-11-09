@@ -40,8 +40,8 @@ if(isset($login)){
 
 <body>
   <div class="login-form">
-     <h1>Titanios</h1>
-     <form action="" method="get" accept-charset="utf-8">
+     <h1><img src="img/logo.png"></h1>
+     <form action="" method="post" accept-charset="utf-8">
      
      <div class="form-group ">
        <input type="text" class="form-control" name="username" placeholder="Usuario" id="username">
