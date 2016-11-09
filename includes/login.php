@@ -1,16 +1,17 @@
 <?php
+include "includes/conexion_bd.php";
 //realizamos la conexión
-        $conexion = mysqli_connect('localhost', 'root', '', 'bd_titanio');
+        // $conexion = mysqli_connect('localhost', 'root', '', 'bd_titanio');
 
-        //le decimos a la conexión que los datos los devuelva diréctamente en utf8, así no hay que usar htmlentities
-        $acentos = mysqli_query($conexion, "SET NAMES 'utf8'");
+        // //le decimos a la conexión que los datos los devuelva diréctamente en utf8, así no hay que usar htmlentities
+        // $acentos = mysqli_query($conexion, "SET NAMES 'utf8'");
 
-         if (!$conexion) {
-             echo "Error: No se pudo conectar a MySQL." . PHP_EOL;
-             echo "errno de depuración: " . mysqli_connect_errno() . PHP_EOL;
-             echo "error de depuración: " . mysqli_connect_error() . PHP_EOL;
-             exit;
-         }
+        //  if (!$conexion) {
+        //      echo "Error: No se pudo conectar a MySQL." . PHP_EOL;
+        //      echo "errno de depuración: " . mysqli_connect_errno() . PHP_EOL;
+        //      echo "error de depuración: " . mysqli_connect_error() . PHP_EOL;
+        //      exit;
+        //  }
 
 
 // include_once "includes/conexion_bd.php";
@@ -36,7 +37,7 @@
 
         
         //4.- Realización de consulta en la base de datos para los NO administradores:
-            $sql = "SELECT usu_usuario, usu_pwd, usu_categoria FROM  tbl_usuarios WHERE usu_usuario = '$usu_usuario' and usu_pwd = '$usu_pwd' and usu_categoria = '$usu_categoria'";
+            $sql = "SELECT usu_usuario, usu_pwd, usu_categoria, usu_id FROM  tbl_usuarios WHERE usu_usuario = '$usu_usuario' and usu_pwd = '$usu_pwd' and usu_categoria = '$usu_categoria'";
             // echo $sql;
         
 
